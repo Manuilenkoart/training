@@ -1,13 +1,8 @@
 
-<button (click)="backgroundToggle = !backgroundToggle">toggle</button>
+<button (click)="toggle = !toggle">toggle</button>
 
-<p [ngClass]="{
-red: backgroundToggle,
-blue: !backgroundToggle
-}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, sapiente!</p>
+<p *ngIf="toggle; else blueParag" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, quas!</p>
 
-<!--второй вариант записи-->
-
-<p
-  [class.blue]="!backgroundToggle"
-[class.red]="backgroundToggle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, ratione.</p>
+<ng-template #blueParag>
+  <p class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, repellat?</p>
+</ng-template>
