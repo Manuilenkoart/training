@@ -11,7 +11,7 @@ import {AppCounterService} from './service/app-counter.service';
   imports: [
     BrowserModule
   ],
-  providers: [AppCounterService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
