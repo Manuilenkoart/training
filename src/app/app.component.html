@@ -5,9 +5,10 @@
 
   <hr />
 
-  <app-post></app-post>
-  <app-post></app-post>
-
+  <app-post
+    *ngFor="let p of posts"
+    [myPost]="p"
+  ></app-post>
 </div>
 
 
