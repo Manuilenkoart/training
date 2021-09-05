@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 import {Post} from '../app.component';
 
 @Component({
@@ -9,6 +9,7 @@ import {Post} from '../app.component';
 export class PostFormComponent implements OnInit {
 
   @Output() onAddPost: EventEmitter<Post> = new EventEmitter<Post>()
+  @ViewChild('titleInput', {static: false}) inputRef: ElementRef //для обращения в ngOnInit => {static: true}
   title = ''
   text = ''
   constructor() { }
@@ -25,5 +26,9 @@ export class PostFormComponent implements OnInit {
       this.onAddPost.emit(post);
       this.title = this.text = '' //обнуление
     }
+  }
+
+  focusTitle() {
+    this.inputRef.nativeElement.focus();
   }
 }
