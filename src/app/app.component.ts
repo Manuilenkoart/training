@@ -14,4 +14,9 @@ export class AppComponent {
     {title: 'Learn component', text: 'i still learn', id: 1},
     {title: 'Next block', text: 'It will be about directive', id: 2}
   ];
+
+  updatePosts(post: Post): void {
+    this.posts = [post, ...this.posts]; //добавление в начало списка
+    // this.posts = [...this.posts, post]; //добавление в конец  списка
+  }
 }
