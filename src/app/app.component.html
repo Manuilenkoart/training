@@ -1,16 +1,15 @@
 <div class="container">
   <h1>Angular Pipes</h1>
 
-  <p>
-    {{e | number: '1.1-5'}}
-  </p>
-  <p>
-    {{e | number: '3.1-2'}}
-  </p>
-  <p>
-<!--    округление в большую сторону-->
-    {{e | number: '1.0-0'}}
-  </p>
+  <p>{{str | uppercase}}</p>
+  <p>{{str | uppercase | lowercase}}</p>
+  <p>{{str | uppercase | lowercase | titlecase}}</p>
+
+  <p>{{str | slice:1}}</p>
+  <p>{{str | slice:1:5}}</p>
+  <p>{{str | slice:1:-2}}</p>
+  <!-- -2 срезает 2 символа с конца-->
+
 </div>
 
 
