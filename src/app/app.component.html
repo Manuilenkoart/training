@@ -1,39 +1,16 @@
 <div class="container">
-  <h1>Angular Directives</h1>
+  <h1>Angular Pipes</h1>
 
-  <p [appStyle]="'red'" fontWeight="bolder" [dStyles]="{border: '1px solid green', borderRadius: '5px'}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, eaque?
+  <p>
+    {{e | number: '1.1-5'}}
   </p>
-
-  <p [appStyle]="'blue'" fontWeight="lighter" [dStyles]="{border: '3px solid yellow', borderRadius: '5px'}">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, eaque?
+  <p>
+    {{e | number: '3.1-2'}}
   </p>
-  <button class="btn" (click)="isVisible = !isVisible">Toogle</button>
-  <div *ngIf="!isVisible" class="wrap">
-    <p>0 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deleniti dicta ea eligendi facilis magnam
-      repellat rerum sapiente temporibus vitae.</p>
-  </div>
-
-<!--  альтернатива того что вверху, * - обертка <ng-template> -->
-  <ng-template [ngIf]="!isVisible">
-    <div class="wrap">
-      <p>1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deleniti dicta ea eligendi facilis magnam
-        repellat rerum sapiente temporibus vitae.</p>
-    </div>
-  </ng-template>
-
-
-    <div *appIfnot="isVisible" class="wrap">
-      <p>2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deleniti dicta ea eligendi facilis magnam
-        repellat rerum sapiente temporibus vitae.</p>
-    </div>
-<!-- альтернатива того что вверху-->
-  <ng-template [appIfnot]="isVisible">
-    <div class="wrap">
-      <p>3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi deleniti dicta ea eligendi facilis magnam
-        repellat rerum sapiente temporibus vitae.</p>
-    </div>
-  </ng-template>
+  <p>
+<!--    округление в большую сторону-->
+    {{e | number: '1.0-0'}}
+  </p>
 </div>
 
 
