@@ -1,14 +1,8 @@
 <div class="container">
   <h1>Angular Pipes</h1>
 
-  <p>{{str | uppercase}}</p>
-  <p>{{str | uppercase | lowercase}}</p>
-  <p>{{str | uppercase | lowercase | titlecase}}</p>
-
-  <p>{{str | slice:1}}</p>
-  <p>{{str | slice:1:5}}</p>
-  <p>{{str | slice:1:-2}}</p>
-  <!-- -2 срезает 2 символа с конца-->
+  <p>{{date | date}}</p>
+  <p>{{date | date: "MMMM dd, yyy, HH:mm:ss"}}</p>
 
 </div>
 
